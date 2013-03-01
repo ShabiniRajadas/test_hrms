@@ -1,0 +1,9 @@
+<h1>Edit Profile</h1>
+<h2>skills</h1>
+<%= form_for @skills , url: wizard_path do |f| %>
+<%=f.label :skill_name %>
+<%=f.text_field :skill_name %><br></br>
+
+<%=f.submit "finish" %>
+
+<% end %>

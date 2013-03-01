@@ -1,0 +1,14 @@
+<h1>welcome to the HR management system</h1>
+
+<%= form_for :session, :url => {:action => 'authenticate'} do |f| %>
+<div align="right"><%=f.label :user_name %>
+<%=f.text_field :user_name %><br></br>
+
+<%=f.label :password %>
+<%=f.password_field :password %><br></br>
+
+<%=f.submit "login" %></div>
+<%= image_tag("hrms.gif", :alt => "test image" ,:style =>"width:400px;")%>
+
+
+<% end %>

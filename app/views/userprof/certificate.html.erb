@@ -1,0 +1,11 @@
+<h1>Edit Profile</h1>
+<h2>certificate</h1>
+<%= form_for @certificate , url: wizard_path do |f| %>
+<%=f.label :certificate_name %>
+<%=f.text_field :certificate_name %><br></br>
+<%=f.label :certificate_provider %>
+<%=f.text_field :certificate_provider %><br></br>
+<%= link_to 'skip', next_wizard_path %>
+<%=f.submit "finish" %>
+
+<% end %>

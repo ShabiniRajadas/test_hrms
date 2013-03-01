@@ -1,0 +1,27 @@
+
+<div align="right"><h1><%= link_to 'edit', edit_user_path(params[:id]) %></h1></div>
+<%= image_tag @employee.employee_image.profimage_url(:thumb) if @employee.employee_image.profimage? %>
+<h1><%= @employee.name %> Profile</h1>
+<h3>Role : <%= @role.role_name %></h3>
+<h3>Name : <%= @employee.name %></h3>
+<h3>Age : <%= @employee.age %></h3>
+<h3>Gender : <%= @employee.gender %></h3>
+<h3>Address : <%= @employee.address %></h3>
+<h3>Phone Number : <%= @employee.phone_number %></h3>
+<h3>Email id : <%= @employee.email_id %></h3>
+<h3>Date of joining : <%= @employee.date_of_joining %></h3>
+<h2>Education</h2>
+<% @employee.educations.each do |f| %>
+<h3>Course_name : <%=f.course_name %></h3>
+<h3>course_institution : <%=f.course_institution %></h3>
+<h3>course_percentage : <%=f.course_percentage %></h3>
+<h3>year of passing : <%=f.year_of_passing %></h3>
+<% end %>
+
+<h2>Certificates</h2>
+<% @employee.certificates.each do |f| %>
+<h3>Certificate_name : <%=f.certificate_name %></h3>
+<h3>Certificate_provider : <%=f.certificate_provider %></h3>
+<% end %>
+<h1><%= link_to 'back' %></h1>
+

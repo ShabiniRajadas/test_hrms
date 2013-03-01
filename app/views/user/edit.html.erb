@@ -1,0 +1,30 @@
+
+<%= form_for @employee , :url => { :action => 'update'} do |f| %>
+<h1>Edit Profile</h1>
+<%=f.label :name %>
+<%=f.text_field :name %><br></br>
+<%=f.label :age %>
+<%=f.text_field :age %><br></br>
+<%=f.label :gender %>
+<%=f.text_field :gender %><br></br>
+
+<%=f.label :address %>
+<%=f.text_field :address %><br></br>
+<%=f.label :phone_number %>
+<%=f.text_field :phone_number %><br></br>
+<%=f.label :email_id %>
+<%=f.text_field :email_id %><br></br>
+<%=f.label :date_of_joining %>
+<%=f.text_field :date_of_joining %><br></br>
+<%= fields_for @role_user do |t| %>				
+	<%=t.label :role_name %>
+	<%= t.select(:role_id, Role.all.collect {|a| [a.role_name, a.id ]}) -%>
+	<%#=t.text_field :role_name %><br></br>
+
+	<%#end %>
+<% end %>
+<%= link_to "skip", userprof_index_path(session['user_id']) %>
+
+<%=f.submit "next" %>
+
+<% end %>

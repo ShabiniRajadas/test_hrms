@@ -1,0 +1,15 @@
+<h1>Edit Profile</h1>
+<h2>Education</h1>
+<%= form_for @education , url: wizard_path do |f| %>
+<%=f.label :course_name %>
+<%=f.text_field :course_name %><br></br>
+<%=f.label :course_institution %>
+<%=f.text_field :course_institution %><br></br>
+<%=f.label :course_percentage %>
+<%=f.text_field :course_percentage %><br></br>
+
+<%=f.label :year_of_passing %>
+<%=f.text_field :year_of_passing %><br></br>
+<%=f.submit "next" %>
+<%= link_to 'skip', next_wizard_path %>
+<% end %>
