@@ -23,7 +23,6 @@ class SessionController < ApplicationController
 					redirect_to   employee_employee_index_path and return
 				end
 			else
-				#:notice = "Incorrect user name or password "
 				redirect_to root_path, :notice => "Incorrect user name or password " and return
 			end
 		

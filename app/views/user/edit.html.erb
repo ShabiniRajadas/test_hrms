@@ -18,10 +18,7 @@
 <%=f.text_field :date_of_joining %><br></br>
 <%= fields_for @role_user do |t| %>				
 	<%=t.label :role_name %>
-	<%= t.select(:role_id, Role.all.collect {|a| [a.role_name, a.id ]}) -%>
-	<%#=t.text_field :role_name %><br></br>
-
-	<%#end %>
+	<%= t.select(:role_id, Role.all.collect {|a| [a.role_name, a.id ]}) %>
 <% end %>
 <%= link_to "skip", userprof_index_path(session['user_id']) %>
 

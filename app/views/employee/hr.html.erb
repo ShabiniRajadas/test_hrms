@@ -1,18 +1,15 @@
 <%= image_tag("hr.jpeg", :alt => "test image" ,:style =>"width:200px;")%>
 	<h1> welcome to your account <h1>
-		<%= link_to 'home', hr_employee_index_path %>
-		<%#= link_to 'edit', edit_user_path(session['user_id']) %>
-		<%= link_to 'show',user_path(session['user_id'])  %>
-		<%= link_to 'add user' ,new_user_user_index_path%>
-		
-		<%= link_to 'logout',logout_session_index_path %><br></br>
-		
-		<% @user.each do |f| %>
-			<% if f.role.role_name != 'admin' %>
-				<% if f.role.role_name != 'hr' %>
-				<%= link_to f.employee.name, user_path(f) %>
-				<% end %>
+	<%= link_to 'home', hr_employee_index_path %>
+	<%= link_to 'show',user_path(session['user_id'])  %>
+	<%= link_to 'add user' ,new_user_user_index_path%>
+	<%= link_to 'logout',logout_session_index_path %><br></br>
+	<% @user.each do |f| %>
+		<% if f.role.role_name != 'admin' %>
+			<% if f.role.role_name != 'hr' %>
+			<%= link_to f.employee.name, user_path(f) %>
 			<% end %>
-			<% end %>
+		<% end %>
+	<% end %>
 
-			<%= link_to 'editphoto', edit_photo_user_index_path %>
+	<%= link_to 'editphoto', edit_photo_user_index_path %>

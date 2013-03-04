@@ -3,11 +3,7 @@ class UserprofController < Wicked::WizardController
 steps :education, :certificate, :skill
 
   def show
-# render :text => params[:id] and return 
-
   	user = User.find(session[:user_id])
-  	  	#render :text => user.employee.to_yaml and return
-
   	@employee = user.employee
     @education = @employee.educations
     @certificate = @employee.certificates
@@ -18,14 +14,11 @@ steps :education, :certificate, :skill
   def edit
   	user = User.find(session[:user_id])
     @employee = user.employee
-    #@education=@employee.education
   end
 
   def update	
-    #render :text => params[:id] and return 
-	user = User.find(session[:user_id])
+    user = User.find(session[:user_id])
     @employee = user.employee
-
     case step
     	when :education
     		@employee.update_attributes(params[:education])
@@ -38,5 +31,5 @@ steps :education, :certificate, :skill
     	
   	end
   	render_wizard
-end
+  end
 end

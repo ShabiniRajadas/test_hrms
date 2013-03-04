@@ -6,17 +6,15 @@
 <%= f.submit 'search' %>
 <%end %>
 
-	<h1> welcome to your account <h1>
-		<%= link_to 'home',employee_index_path %>
-		<%= link_to 'AddRole', add_role_user_index_path %>
-		<%#= link_to 'editmyprofile', edit_user_path(session['user_id']) %>
-		<%= link_to 'show',user_path(session['user_id']) %>
-		
-		<%= link_to 'logout', logout_session_index_path %><br></br>
-		<%= paginate @user, :window => 3 %>
-		<% @user.each do |f| %>
-			<% if f.user.role.role_name != 'admin' %>
-					<%= link_to f.name, user_path(f) %>
-			<% end %>
-		<% end %><br /><br />
-		<%= link_to 'editphoto', edit_photo_user_index_path %>
+<h1> welcome to your account <h1>
+	<%= link_to 'home',employee_index_path %>
+	<%= link_to 'AddRole', add_role_user_index_path %>
+	<%= link_to 'show',user_path(session['user_id']) %>
+	<%= link_to 'logout', logout_session_index_path %><br></br>
+	<%= paginate @user, :window => 3 %>
+	<% @user.each do |f| %>
+		<% if f.user.role.role_name != 'admin' %>
+			<%= link_to f.name, user_path(f) %>
+		<% end %>
+	<% end %><br /><br />
+	<%= link_to 'editphoto', edit_photo_user_index_path %>

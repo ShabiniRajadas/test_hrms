@@ -1,14 +1,10 @@
 <h1>welcome manager</h1>
 <%= image_tag("manager.jpg", :alt => "test image" ,:style =>"width:200px;")%>
 	<h1> welcome to your account <h1>
-		<%= link_to 'home', manager_employee_index_path %>
-		<%#= link_to 'editmyprofile', edit_user_path(session['user_id']) %>
-		<%= link_to 'show', user_path(session['user_id']) %>
-		<%= link_to 'logout',logout_session_index_path %><br /><br />
-
-		<% @employee.each do |f| %>
-						<%# if f.employee.manager_id == employee_id %>
-							<%= link_to f.name, user_path(f) %>
-			<%# end %>
-		<% end %>
-		<%= link_to 'editphoto', edit_photo_user_index_path %>
+	<%= link_to 'home', manager_employee_index_path %>
+	<%= link_to 'show', user_path(session['user_id']) %>
+	<%= link_to 'logout',logout_session_index_path %><br /><br />
+	<% @employee.each do |f| %>
+		<%= link_to f.name, user_path(f) %>
+	<% end %>
+	<%= link_to 'editphoto', edit_photo_user_index_path %>
