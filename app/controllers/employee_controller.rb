@@ -18,6 +18,7 @@ class EmployeeController < ApplicationController
   end
 
   def employee
+    
   end
 
 end
