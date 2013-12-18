@@ -1,0 +1,4 @@
+#!/bin/bash
+cd /rails
+#rails server $* -p 3000
+ruby server.rb -vs
