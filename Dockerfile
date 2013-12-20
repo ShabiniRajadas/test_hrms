@@ -21,7 +21,7 @@ RUN gem install rails --no-ri --no-rdoc
 
 # the Rails application will live in the /rails directory
 # copy the Rails app
-ADD	shabini/hrms /rails
+ADD	hrms /rails
 
 # copy the start,setup script
 ADD scripts/start /start
